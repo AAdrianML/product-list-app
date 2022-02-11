@@ -1,0 +1,44 @@
+
+.cardContainer{
+    border-radius:5px;
+    display:flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    width:30%;
+    height:45%;
+    margin:10px;
+}
+.image{
+    height:100%;
+    width:100%;
+    border-radius:5px;
+}
+
+.productText{
+    font-size: 1.1vw;
+    padding: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    max-width: 100%; 
+    min-height: 4vh;  
+}
+
+/*media query*/
+@media all and (max-width: 1500px){
+.cardContainer{
+    width:45%;
+}
+.productText{
+    font-size: 1.8vw;
+}
+}
+@media all and (max-width: 590px){
+    .cardContainer{
+        width:40%;
+    }
+
+    }

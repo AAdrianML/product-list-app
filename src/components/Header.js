@@ -1,18 +1,13 @@
 import React from 'react'
-
-const Header = () => {
+import './Header.css'
+const Header = ({order,status}) => {
     return (
-        <div style={styles.header}>
-            
+        <div className='header' >
+            <div className='textTitle'> {order ? `Orden Seleccionada: ${order}` : `Orden Seleccionada --`}</div>
+            <div className='textLeftTitle'>{status ? `Status de pago: ${status.id == 2 ? 'Confirmado' : 'Pendiente'}` : 'Status de pago --'}</div>
         </div>
     )
 }
 
-const styles ={
-    header:{
-        width:'100vw',
-        minHeight:'6vh',
-        backgroundColor:'blue'
-    }
-}
+
 export default Header
