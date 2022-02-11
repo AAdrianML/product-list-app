@@ -1,31 +1,31 @@
 import React from 'react'
 import resources from "../resources";
-const ItemCard = ({item}) => {
+import './ItemCard.css'
+const ItemCard = ({item,status,setShowModal,setSelectedItem}) => {
+
+    function handleOnClick(){
+        setSelectedItem(item)
+        setShowModal(true)
+    }
+
     return (
-        <div style={styles.container}>
-            {console.log(item)}
+        <div 
+        className='cardContainer'
+        style={{  
+        border: status && status.id == 2 ? '3px solid #40C940' : '3px solid #D2D2D2',
+        }}
+        onClick={handleOnClick}
+        >
            <img
+           className='image'
            src={resources.images.orderImg}
+           alt={item.name}
            ></img> 
-           <div>{item.name}</div> 
+           <div className='productText'>{item.name}</div> 
         </div>
     )
 }
 
-const styles = {
-    container:{
-        //backgroundColor:'red',
-        width:'30%',
-        height:'30%',
-        margin:10,
-        border:'3px solid #D2D2D2',
-        borderRadius:5,
-        display:'flex',
-        flexDirection: 'column',
-        flexWrap:'wrap',
-        justifyContent:'center',
-        alignItems:'center'
-    },
-}
+
 
 export default ItemCard
